@@ -1,0 +1,339 @@
+/** THe other color CCD5AE **/
+
+@font-face {
+  font-family: fancyPants;
+  src: url(SensationsandQualities.ttf);
+}
+
+#Title {
+	font-family: fancyPants, 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+	text-align: center;
+	margin: auto;
+}
+#Title h1 {
+	font-size: 6em;
+
+}
+
+h2 {
+	text-align: center;
+}
+h3 {
+	text-align: center;
+	
+}
+
+/****************************************/
+
+#theContainer {
+	border-width: 3px;
+	border-color: black;
+	background-color: #FEFAE0;
+
+}
+
+#navbar {
+	padding-top: 2%;
+}
+
+
+/************** The Headings ********************/
+
+#waitingHead{
+	border: 1px;
+	border-color: #D4A373;
+	border-style: solid;
+	
+}
+#workingHead{
+	border: 1px;
+	border-color: #D4A373;
+	border-style: solid;
+}
+
+/* The Fields */
+
+#inProgress {
+	padding: 0;
+	border: 1px;
+	border-color: #D4A373;
+	border-style: solid;
+	
+	}
+
+	/********************* Blocked Column ****************/
+
+#blocked{
+	border-color: #D4A373;
+	border-style: solid;
+	border-width: 1px;
+	padding: 1%;
+	float: left;
+	height: 1200px;
+}
+
+
+#blocked button{
+	height: 12%;
+	width: 45%;
+	margin: 3px;
+	margin-color: gray;
+
+}
+
+#blocked button p {
+	font-size: .5em;
+	word-break: break-all;
+	text-overflow: ellipses;
+}
+
+
+
+/************** done column **************/
+	
+#done{	
+	
+	border: 1px;
+	border-color: #D4A373;
+	border-style: solid;
+	
+	}
+	
+#done button{
+	border-width: 2px;
+	border-style: solid;
+	border-color: gray;
+}
+
+
+
+/*************** Backlog column **********************/
+
+#backlog {
+	border: 1px;
+	border-color: #D4A373;
+	border-style: solid;
+	padding: 1%;
+
+	
+}
+#backlog button {
+	width: 23%;
+	height: 7%;
+	margin: 3px;
+	margin-color: gray;
+
+}
+
+#backlog button  p{
+	word-break: break-all;
+	text-overflow: ellipses;
+	font-size: .5em;
+}
+
+
+/**************** Working Column ******************/
+
+#working{
+	width: 50%;
+	float: right;
+	padding: 0;
+}
+
+#working h3 {
+	width: 100%;
+	padding: 0;
+}
+
+#working button{
+	height: 30%;
+	width: 50%;
+	border-width: 2px;
+	border-style: solid;
+	border-color: gray;
+	
+}
+
+#working button p{
+	font-size: .5em;
+	word-break: break-all;
+	text-overflow: ellipses;
+	
+}
+
+
+/********************* Waiting Column ****************/
+
+#waiting{
+	padding: 3%;
+	float: left;
+	width: 50%;
+	height: 1200px;
+}
+
+
+#waiting button{
+	height: 12%;
+	width: 30%;
+	margin: 3px;
+	margin-color: gray;
+
+
+}
+
+#waiting button p {
+	font-size: .5em;
+	word-break: break-all;
+	text-overflow: ellipses;
+}
+
+
+
+/********************* Unassigned Column ****************/
+
+#unassigned{
+	padding: 3%;
+	float: left;
+	width: 50%;
+	height: 1200px;
+}
+
+
+#unassigned button{
+	height: 12%;
+	width: 30%;
+	margin: 3px;
+	margin-color: gray;
+
+
+}
+
+#unassigned button p {
+	font-size: .5em;
+	word-break: break-all;
+	text-overflow: ellipses;
+}
+
+
+/* The Teams */
+.team1{
+	background-color: #E9EDC9;
+	opacity: 0.7;
+	height: 20em;
+
+	text-align: center;
+	margin: auto;
+
+}
+.team2{
+	background-color: #FAEDCD;
+	opacity: 0.7;
+	height: 20em;
+
+	text-align: center;
+	margin: auto;
+
+	
+}
+#Kara h3{
+	z-index: -1;
+	margin: auto;
+	text-align: center;
+}
+#Evelyn h3{
+	z-index: -1;
+	margin: auto;
+	text-align: center;
+	
+}
+#Grace h3 {
+	z-index: -1;
+	margin: auto;
+	text-align: center;
+}
+#Tessa h3{
+	z-index: -1;
+	margin: auto;
+	text-align: center;
+}
+#Nathan h3{
+	z-index: -1;	
+	padding: 0;
+	margin: auto;
+	text-align: center;
+}
+#Kara{
+	background-image: url('../Images/KaraResized.jpg');
+	background-position: center;
+	background-repeat: no-repeat;
+	z-index: 10;
+	margin: auto;
+	text-align: center;
+}
+#Evelyn{
+	background-image: url('../Images/EvieResized.jpg');
+	background-position: center;
+	background-repeat: no-repeat;
+	z-index: 10;
+	margin: auto;
+	text-align: center;
+	
+}
+#Grace{
+	background-image: url('../Images/GraceResized.jpg');
+	background-position: center;
+	background-repeat: no-repeat;
+	z-index: 10;
+	margin: auto;
+	text-align: center;
+}
+#Tessa{
+	background-image: url('../Images/TessaResized.jpg');
+	background-position: center;
+	background-repeat: no-repeat;
+	z-index: 10;
+	margin: auto;
+	text-align: center;
+}
+
+
+
+#Nathan{
+	background-image: url('../Images/DaddyResized.jpg');
+	background-position: center;
+	background-repeat: no-repeat;
+	z-index: 10;
+	margin: auto;
+	text-align: center;
+}
+
+/**************** The Tickets *****************/
+
+.Tier1 {
+	width: 22%;
+	height: 1%;
+	margin: 3px;
+	margin-color: gray;
+
+}
+	
+.Tier1 p{
+	word-break: break-all;
+	text-overflow: ellipses;
+	font-size: .5em;
+}
+.Tier3 {
+	width: 22%;
+	height: 1%;
+	margin: 3px;
+	margin-color: gray;
+	
+}
+.Tier3 p{
+	word-break: break-all;
+	text-overflow: ellipses;
+	font-size: .5em;
+}
+
+.custModal button {
+}
