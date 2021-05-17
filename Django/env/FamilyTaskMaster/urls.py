@@ -21,6 +21,7 @@ from FTM import views
 
 urlpatterns = [
     path('', views.home, name='home'),
+    path('FTM/Members/',views.Members,name='Members')
 ]
 
 urlpatterns += staticfiles_urlpatterns()
