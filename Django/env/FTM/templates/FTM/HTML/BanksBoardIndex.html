@@ -48,7 +48,9 @@
 			
 			<!-- Headings and Titles -->
 			<div class="row" id="headings">
-				<div class="col-3" id="backlogHead"><h2>Backlog</h2></div>
+				<div class="col-3" id="backlogHead">
+					<h2>Backlog</h2>
+				</div>
 				<div class="col-5">
 					<div class="row" id="inProgressHead"><div class="col"><h3>In Progress</h3></div></div>
 					<div class="row">
@@ -64,13 +66,45 @@
 			<!-- The Board -->
 			<div class="row" id="chart">
 			
-				<div class="col-3" id="backlog" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+				<div class="col-3" id="backlog" ondrop="drop(event)" ondragover="allowDrop(event)">
+				{% for backTick in backTicks %}
+				<button type='button' draggable='true' class='btn btn-dark' data-toggle='modal' data-target='#modal ticket.id' ondragstart='drag(event)' id='ticket.id'>
+					<h6>{{ backTick.taskTitle }}</h6>					
+				</button>
+
+					
+				{% endfor %}
+				</div>
 				<div class="col-5" id="inProgress">
-					<div id="waiting" ondrop="drop(event)" ondragover="allowDrop(event)" class="col"></div>
+					
+					<div id="waiting" ondrop="drop(event)" ondragover="allowDrop(event)" class="col">
+					{% for waitTick in waitTicks %}
+
+					{% endfor %}
+					</div>
 					<div id="working" class="col">
-						<div ondragover="showStuff('NathanP')" onmouseenter="showStuff('NathanP')" onmouseleave="hideStuff('NathanP')" id="NathanP"><h3>Father Dearest Whom We Love</h3><div class="row team2" ondrop="drop(event)" ondragover="allowDrop(event)" id="Nathan"></div></div>
+						
+						<div ondragover="showStuff('NathanP')" onmouseenter="showStuff('NathanP')" onmouseleave="hideStuff('NathanP')" id="NathanP">
+							<h3>Father Dearest Whom We Love</h3>
+							<div class="row team2" ondrop="drop(event)" ondragover="allowDrop(event)" id="Nathan">
+								{% for nTick in nTicks %}
+									<button type='button' draggable='true' class='btn btn-dark' data-toggle='modal' data-target='#modal ticket.id' ondragstart='drag(event)' id='ticket.id'>
+										<h4>{{ nTick.taskTitle }}</h4>					
+									</button>
+								{% endfor %}
+							</div>
+						</div>
 						<br/>
-						<div ondragover="showStuff('KaraP')" onmouseenter="showStuff('KaraP')" onmouseleave="hideStuff('KaraP')" id="KaraP"><h3>Bobo Socker Face Butt</h3><div class="row team2" ondrop="drop(event)" ondragover="allowDrop(event)" id="Kara"></div></div>
+						<div ondragover="showStuff('KaraP')" onmouseenter="showStuff('KaraP')" onmouseleave="hideStuff('KaraP')" id="KaraP">
+							<h3>Kara</h3>
+							<div class="row team2" ondrop="drop(event)" ondragover="allowDrop(event)" id="Kara">
+								{% for kTick in nTicks %}
+									<button type='button' draggable='true' class='btn btn-dark' data-toggle='modal' data-target='#modal ticket.id' ondragstart='drag(event)' id='ticket.id'>
+										<h4>{{ kTick.taskTitle }}</h4>					
+									</button>
+								{% endfor %}
+							</div>
+						</div>
 						<br/>
 						<div ondragover="showStuff('GraceP')" onmouseenter="showStuff('GraceP')" onmouseleave="hideStuff('GraceP')" id="GraceP"><h3>Grace</h3><div class="row team1" ondrop="drop(event)" ondragover="allowDrop(event)" id="Grace"></div></div>
 						<br/>
