@@ -5,6 +5,11 @@
   src: url(SensationsandQualities.ttf);
 }
 
+body {
+	font-family: fancyPants, 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+	color: #94c0cc;
+}
+
 #Title {
 	font-family: fancyPants, 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 	text-align: center;
@@ -12,7 +17,15 @@
 }
 #Title h1 {
 	font-size: 6em;
+	color:#f6f4f1;
 
+}
+
+#theBoardLink{
+	color: #bcdf8a;
+}
+#createTaskLink{
+	color: #bcdf8a;
 }
 
 h2 {
@@ -28,12 +41,17 @@ h3 {
 #theContainer {
 	border-width: 3px;
 	border-color: black;
-	background-color: #FEFAE0;
+	/*background-color: #FEFAE0;*/
+	background-repeat: no-repeat;
+	background-image: url(../Images/chalkboardblack.jpg);
+	background-size: cover;
 
 }
 
 #navbar {
 	padding-top: 2%;
+	width: 100%;
+
 }
 
 
@@ -41,13 +59,13 @@ h3 {
 
 #waitingHead{
 	border: 1px;
-	border-color: #D4A373;
+	border-color: #f6f4f1;
 	border-style: solid;
 	
 }
 #workingHead{
 	border: 1px;
-	border-color: #D4A373;
+	border-color: #f6f4f1;
 	border-style: solid;
 }
 
@@ -56,7 +74,7 @@ h3 {
 #inProgress {
 	padding: 0;
 	border: 1px;
-	border-color: #D4A373;
+	border-color: #f6f4f1;
 	border-style: solid;
 	
 	}
@@ -64,7 +82,7 @@ h3 {
 	/********************* Blocked Column ****************/
 
 #blocked{
-	border-color: #D4A373;
+	border-color: #f6f4f1;
 	border-style: solid;
 	border-width: 1px;
 	padding: 1%;
@@ -77,7 +95,6 @@ h3 {
 	height: 12%;
 	width: 45%;
 	margin: 3px;
-	margin-color: gray;
 
 }
 
@@ -94,7 +111,7 @@ h3 {
 #done{	
 	
 	border: 1px;
-	border-color: #D4A373;
+	border-color: #f6f4f1;
 	border-style: solid;
 	
 	}
@@ -111,17 +128,19 @@ h3 {
 
 #backlog {
 	border: 1px;
-	border-color: #D4A373;
+	border-color: #f6f4f1;
 	border-style: solid;
 	padding: 1%;
 
 	
 }
 #backlog button {
-	width: 23%;
-	height: 7%;
+	width: 95%;
+	height: 5%;
 	margin: 3px;
-	margin-color: gray;
+	opacity: 1;
+	color: #f6f4f1;
+
 
 }
 
@@ -176,9 +195,6 @@ h3 {
 	height: 12%;
 	width: 30%;
 	margin: 3px;
-	margin-color: gray;
-
-
 }
 
 #waiting button p {
@@ -203,7 +219,6 @@ h3 {
 	height: 12%;
 	width: 30%;
 	margin: 3px;
-	margin-color: gray;
 
 
 }
@@ -212,13 +227,13 @@ h3 {
 	font-size: .5em;
 	word-break: break-all;
 	text-overflow: ellipses;
+	opacity: 0.3;
 }
 
 
 /* The Teams */
 .team1{
-	background-color: #E9EDC9;
-	opacity: 0.7;
+	opacity: 0.3;
 	height: 20em;
 
 	text-align: center;
@@ -226,14 +241,31 @@ h3 {
 
 }
 .team2{
-	background-color: #FAEDCD;
-	opacity: 0.7;
+	opacity: 0.3;
 	height: 20em;
 
 	text-align: center;
 	margin: auto;
 
 	
+}
+#KaraP{
+	color: #6fe7db;
+}
+#NathanP{
+	color: #6fe7db;
+}
+#GraceP{
+	color: #c4adc9;
+}
+#EvelynP{
+	color: #c4adc9;
+}
+#TessaP{
+	color: #c4adc9;
+}
+#MikaelaP{
+	color: #c4adc9;
 }
 #Kara h3{
 	z-index: -1;
@@ -263,7 +295,10 @@ h3 {
 	text-align: center;
 }
 #Kara{
-	background-image: url('../Images/KaraResized.jpg');
+	border-color:#f6f4f1;
+	border-style:solid;
+	border-width: 1px;
+	border-radius: 10%;
 	background-position: center;
 	background-repeat: no-repeat;
 	z-index: 10;
@@ -271,7 +306,11 @@ h3 {
 	text-align: center;
 }
 #Evelyn{
-	background-image: url('../Images/EvieResized.jpg');
+	border-radius: 10%;
+	border-color:#f6f4f1;
+	border-style:solid;
+	border-width: 1px;
+	color:#6fe7db;
 	background-position: center;
 	background-repeat: no-repeat;
 	z-index: 10;
@@ -280,7 +319,11 @@ h3 {
 	
 }
 #Grace{
-	background-image: url('../Images/GraceResized.jpg');
+	border-radius: 10%;
+	border-color:#f6f4f1;
+	border-style:solid;
+	border-width: 1px;
+	color:#6fe7db;
 	background-position: center;
 	background-repeat: no-repeat;
 	z-index: 10;
@@ -288,7 +331,11 @@ h3 {
 	text-align: center;
 }
 #Tessa{
-	background-image: url('../Images/TessaResized.jpg');
+	border-radius: 10%;
+	border-color:#f6f4f1;
+	border-style:solid;
+	border-width: 1px;
+	color:#6fe7db;
 	background-position: center;
 	background-repeat: no-repeat;
 	z-index: 10;
@@ -296,10 +343,25 @@ h3 {
 	text-align: center;
 }
 
+#Mikaela{
+	border-radius: 10%;
+	border-color:#f6f4f1;
+	border-style:solid;
+	border-width: 1px;
+	color:#6fe7db;
+	background-position: center;
+	background-repeat: no-repeat;
+	z-index: 10;
+	margin: auto;
+	text-align: center;
 
+}
 
 #Nathan{
-	background-image: url('../Images/DaddyResized.jpg');
+	border-radius: 10%;
+	border-color:#f6f4f1;
+	border-style:solid;
+	border-width: 1px;
 	background-position: center;
 	background-repeat: no-repeat;
 	z-index: 10;
@@ -313,7 +375,6 @@ h3 {
 	width: 22%;
 	height: 1%;
 	margin: 3px;
-	margin-color: gray;
 
 }
 	
@@ -326,14 +387,10 @@ h3 {
 	width: 22%;
 	height: 1%;
 	margin: 3px;
-	margin-color: gray;
 	
 }
 .Tier3 p{
 	word-break: break-all;
 	text-overflow: ellipses;
 	font-size: .5em;
-}
-
-.custModal button {
 }

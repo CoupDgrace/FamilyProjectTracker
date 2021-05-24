@@ -1,4 +1,5 @@
 from django.db import models
+from django.utils.translation import gettext_lazy as _
 
 # Create your models here.
 class Members(models.Model):
@@ -8,9 +9,7 @@ class Members(models.Model):
 
     memberName = models.CharField(max_length=15) 
     memberSquad = models.CharField(max_length=15)
-    memberIsAssignedTask = models.BooleanField()
-
-
+    memberIsAssignedTask = models.BooleanField(default=False, blank=True)
 
     ### Methods ###
 
@@ -21,6 +20,18 @@ class Members(models.Model):
 
 class Tasks(models.Model):
     ''' Tasks or Ticket objects '''
+    ### Enum Classes ###
+    class priorityChoice(models.IntegerChoices):
+        LIHU = 2, _('Low Impact - High Urgency')
+        LILU = 4, _('Low Impact - Low Urgency')
+        HIHU = 1, _('High Impact - High Urgency')
+        HILU = 3, _('High Impact - Low Urgency')
+
+    class statusChoice(models.TextChoices):
+        backlog = 'Backlog'
+        inprogress = 'In Progress'
+        blocked = 'Blocked'
+        complete = 'Complete'
 
     ### Fields ###
 
@@ -29,9 +40,9 @@ class Tasks(models.Model):
     taskParent = models.IntegerField(null=True, blank=True)
     taskCreatedDateTime = models.DateTimeField(auto_now_add=True)
     taskDeadline = models.DateTimeField(null=True, blank=True)
-    taskPriority = models.IntegerField()
+    taskPriority = models.IntegerField(choices=priorityChoice.choices, default=priorityChoice.LILU)
     taskHasChild = models.BooleanField(default=False,blank=True)
-    taskStatus = models.CharField(max_length=15, default='backlog',)
+    taskStatus = models.CharField(choices=statusChoice.choices, max_length=20, default=statusChoice.backlog)
     taskPercentComplete = models.SmallIntegerField(default=0,blank=True)
 
     ### Methods ###
