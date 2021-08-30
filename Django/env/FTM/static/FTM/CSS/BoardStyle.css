@@ -5,6 +5,10 @@
   src: url(SensationsandQualities.ttf);
 }
 
+@font-face {
+	font-family: otherPants;
+	src: url(Chalkboard.ttf);
+}
 body {
 	font-family: fancyPants, 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 	color: #94c0cc;
@@ -92,6 +96,7 @@ h3 {
 
 
 #blocked button{
+	font-family: otherPants, 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 	height: 12%;
 	width: 45%;
 	margin: 3px;
@@ -99,6 +104,7 @@ h3 {
 }
 
 #blocked button p {
+	
 	font-size: .5em;
 	word-break: break-all;
 	text-overflow: ellipses;
@@ -109,17 +115,26 @@ h3 {
 /************** done column **************/
 	
 #done{	
-	
 	border: 1px;
 	border-color: #f6f4f1;
 	border-style: solid;
+	padding: 1%;
 	
 	}
 	
 #done button{
-	border-width: 2px;
-	border-style: solid;
-	border-color: gray;
+	font-family: otherPants, 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+	width: 95%;
+	height: 5%;
+	margin: 3px;
+	opacity: 1;
+	color: #f6f4f1;
+}
+
+#done button p{
+	word-break: break-all;
+	text-overflow: ellipses;
+	font-size: .5em;
 }
 
 
@@ -135,6 +150,7 @@ h3 {
 	
 }
 #backlog button {
+	font-family: otherPants, 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 	width: 95%;
 	height: 5%;
 	margin: 3px;
@@ -144,7 +160,8 @@ h3 {
 
 }
 
-#backlog button  p{
+#backlog button p{
+	
 	word-break: break-all;
 	text-overflow: ellipses;
 	font-size: .5em;
@@ -165,6 +182,7 @@ h3 {
 }
 
 #working button{
+	font-family: otherPants, 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 	height: 30%;
 	width: 50%;
 	border-width: 2px;
@@ -184,6 +202,7 @@ h3 {
 /********************* Waiting Column ****************/
 
 #waiting{
+	
 	padding: 3%;
 	float: left;
 	width: 50%;
@@ -192,6 +211,7 @@ h3 {
 
 
 #waiting button{
+	font-family: otherPants, 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 	height: 12%;
 	width: 30%;
 	margin: 3px;
@@ -235,7 +255,7 @@ h3 {
 .team1{
 	opacity: 0.3;
 	height: 20em;
-
+	font-family: otherPants, 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 	text-align: center;
 	margin: auto;
 
@@ -243,7 +263,7 @@ h3 {
 .team2{
 	opacity: 0.3;
 	height: 20em;
-
+	font-family: otherPants, 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 	text-align: center;
 	margin: auto;
 

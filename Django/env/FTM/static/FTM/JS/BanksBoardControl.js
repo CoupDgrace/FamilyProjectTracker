@@ -3,34 +3,12 @@ $(document).ready(function() {
 	$.ajaxSetup({ cache: false });
 
 	/* Member ids: */
-	var idNathan = 0;
-	var idKara = 1;
-	var idGrace = 2;
-	var idEvie = 3;
-	var idTessa = 4;
-
-
-
-	/* Get backlog Tasks */
-	
-	
-	/* Get WaitingTickets */
-		
-		
-	/* Get Blocked Tickets */
-		
-	
-	/* Get Nathan's Tickets */
-	
-	
-	/* Get Kara's tickets */
-
-	
-	/*Get Evelyns tickets */
-
-	
-	
-	/* Get Grace's tickets */
+	var idNathan = 1;
+	var idKara = 2;
+	var idGrace = 3;
+	var idEvie = 4;
+	var idTessa = 5;
+	var idMikaela = 6;
 
 
 	document.getElementById('Kara').style.display = 'none';
@@ -59,7 +37,6 @@ function allowDrop(ev)  {
  function showStuff(ev) {	 
 	document.getElementById(ev).children[1].style.display = 'block';
 	document.getElementById(ev).children[0].style.display = 'none';
-	
 }
 
 function hideStuff(ev){
@@ -67,7 +44,6 @@ function hideStuff(ev){
 	document.getElementById(ev).children[1].style.display = 'none';	
 
 	var tickets = document.getElementById(ev).getElementsByClassName('modal custModal');
-	var countString =  "<p>" + tickets.length + "</p>"
 
 }
 
@@ -105,7 +81,7 @@ function hideStuff(ev){
 	   }	   
 	   
 	   case "done": {
-		   	/* Set ticket to done and custom attribute to '' */
+		   	/* Set ticket to done */
 			var jsonObj = {"statustype":{"type":"StatusType","id":3}};
 			var jsonStr = JSON.stringify(jsonObj)
 			$.ajax({
@@ -183,13 +159,6 @@ function hideStuff(ev){
 }
 	   /* Set custom attribute to tech id */
 function setTechId(ticketId, techName){
-		   var jsonObj = {"customFields": [{"definitionId": 30, "restValue": techName}]}
-		   var jsonStr = JSON.stringify(jsonObj);
-			$.ajax({
-				  url: "http://helpdesk/helpdesk/WebObjects/Helpdesk.woa/ra/Tickets/"+ticketId+"?apiKey=GTxT2m6i2rEw4bnbaQ7HjWubPjQVQANJM43iXc2N",
-				  contentType: 'application/json',
-				  type: 'PUT',
-				  data: jsonStr,
-				  success: function(data) {console.log("set Custom Field to "+ techName)}
-				});
+	/* TODO change Ticket member assignmetn */
+	
 }

@@ -27,7 +27,6 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['192.168.254.194', 'localhost', '127.0.0.1']
 
-
 # Application definition
 
 INSTALLED_APPS = [
@@ -68,6 +67,7 @@ TEMPLATES = [
     },
 ]
 
+    
 WSGI_APPLICATION = 'FamilyTaskMaster.wsgi.application'
 
 

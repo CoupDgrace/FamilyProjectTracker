@@ -156,8 +156,23 @@
 						<br/>								
 					</div>
 				</div>	
-				<div class="col-2" id="blocked" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-				<div class="col-2" id="done" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+				<div class="col-2" id="blocked" ondrop="drop(event)" ondragover="allowDrop(event)">
+					{% for blockTick in blockTicks %}
+					<button type='button' draggable='true' class='btn btn-primary-outline' data-toggle='modal' data-target='#modal ticket.id' ondragstart='drag(event)' id='ticket.id'>
+						<h3>{{ blockTick.taskTitle }}</h3>					
+					</button>
+	
+					{% endfor %}
+				
+				</div>
+				<div class="col-2" id="done" ondrop="drop(event)" ondragover="allowDrop(event)">
+					{% for doneTick in doneTicks %}
+					<button type='button' draggable='true' class='btn btn-primary-outline' data-toggle='modal' data-target='#modal ticket.id' ondragstart='drag(event)' id='ticket.id'>
+						<h3>{{ doneTick.taskTitle }}</h3>					
+					</button>
+	
+					{% endfor %}
+				</div>
 			</div>	
         </div>
 

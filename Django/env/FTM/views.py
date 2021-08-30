@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from .models import *
+from django.db.models import Q
 
 # Create your views here.
 # Home Page
@@ -11,13 +12,15 @@ def home(request):
     eTicks = Tasks.objects.filter(assignedMember = 4)
     tTicks = Tasks.objects.filter(assignedMember = 5)
     mTicks = Tasks.objects.filter(assignedMember = 6)
-    backTicks = Tasks.objects.filter(taskStatus='backlog')
+    backTicks = Tasks.objects.filter(Q(taskStatus='backlog') | Q(taskStatus='Backlog'))
+    doneTicks = Tasks.objects.filter(Q(taskStatus='Complete') | Q(taskStatus='complete'))
+    waitTicks = Tasks.objects.filter(taskStatus='waiting')
 
 
     return render (
         request,
         'FTM/HTML/BanksBoardIndex.html',
-        {'nTicks': nTicks, 'backTicks':backTicks, 'kTicks':kTicks, 'gTicks':gTicks, 'eTicks':eTicks, 'tTicks':tTicks, 'mTicks':mTicks},
+        {'nTicks': nTicks, 'backTicks':backTicks, 'kTicks':kTicks, 'gTicks':gTicks, 'eTicks':eTicks, 'tTicks':tTicks, 'mTicks':mTicks, 'doneTicks':doneTicks, 'waitTicks':waitTicks},
     )   
 
 '''def admin(request):
