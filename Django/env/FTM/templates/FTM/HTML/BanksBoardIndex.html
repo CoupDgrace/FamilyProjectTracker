@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>The Banks Board</title>
+		<meta charset="utf-8"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+		<meta http-equiv="refresh" content="30" />
+		
+		<!-- Bootstrap CSS -->
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+		<!-- More Styling -->
+		{% load static %}
+		<link rel="stylesheet" type="text/css" href="{% static 'FTM/CSS/BoardStyle.css' %}" /> 
+		
+		<!-- jQuery, Popper.js, then Bootstrap JS -->
+		
+		<script src="https://code.jquery.com/jquery-3.4.1.js"></script> 
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+		
+		<!-- DB Helper scripts -->
+		<script src="{% static 'FTM/JS/BanksBoardControl.js' %}"></script>
+		
+ 		<!-- FontAwesome icons etc -->
+		<script src="https://kit.fontawesome.com/26841ac8a4.js"></script>
+	</head>
+
+    <body>
+		<div class="container-fluid" id="theContainer">
+		
+				<!-- Nav Bar -->
+			<nav class="navbar navbar-expand-sm navbar-light" id="navbar">
+			  <ul class="navbar-nav">
+				<li class="nav-item active">
+					<a class="nav-link" href="{% url 'home' %}" id='theBoardLink'><h2>The Board</h2></a>
+				</li>
+			  </ul>
+
+			  	<div class="col-8" id="Title">
+					<h1>Family Task Master</h1>
+				</div>	
+
+				<ul class="navbar-nav">
+				  <li class="nav-item">
+					<a class="nav-link" href="./admin" id='createTaskLink'><h2>Task Creation</h2></a>
+				  </li>
+				</ul>
+
+			</nav>
+
+			
+			<!-- Headings and Titles -->
+			<div class="row" id="headings">
+				<div class="col-3" id="backlogHead">
+					<h2>Backlog</h2>
+				</div>
+				<div class="col-5">
+					<div class="row" id="inProgressHead"><div class="col"><h3>In Progress</h3></div></div>
+					<div class="row">
+						<div class="col" id="waitingHead"><h3>Waiting</h3></div>
+						<div class="col" id="workingHead"><h3>Working</h3></div>
+					</div>
+			
+				</div>
+				<div class="col-2" id="blockedHead"><h2>Blocked</h2></div>
+				<div class="col-2" id="doneHead"><h2>Done</h2></div>
+			</div>
+		
+			<!-- The Board -->
+			<div class="row" id="chart">
+			
+				<div class="col-3" id="backlog" ondrop="drop(event)" ondragover="allowDrop(event)">
+				{% for backTick in backTicks %}
+				<button type='button' draggable='true' class='btn btn-primary-outline' data-toggle='modal' data-target='#modal ticket.id' ondragstart='drag(event)' id='ticket.id'>
+					<h3>{{ backTick.taskTitle }}</h3>					
+				</button>
+
+					
+				{% endfor %}
+				</div>
+				<div class="col-5" id="inProgress">
+					
+					<div id="waiting" ondrop="drop(event)" ondragover="allowDrop(event)" class="col">
+					{% for waitTick in waitTicks %}
+
+					{% endfor %}
+					</div>
+					<div id="working" class="col">
+						
+						<div ondragover="showStuff('NathanP')" onmouseenter="showStuff('NathanP')" onmouseleave="hideStuff('NathanP')" id="NathanP">
+							<h3>Father Dearest Whom We Love</h3>
+							<div class="row team2" ondrop="drop(event)" ondragover="allowDrop(event)" id="Nathan">
+								{% for nTick in nTicks %}
+									<button type='button' draggable='true' class='btn btn-dark' data-toggle='modal' data-target='#modal ticket.id' ondragstart='drag(event)' id='ticket.id'>
+										<h4>{{ nTick.taskTitle }}</h4>					
+									</button>
+								{% endfor %}
+							</div>
+						</div>
+						<br/>
+						<div ondragover="showStuff('KaraP')" onmouseenter="showStuff('KaraP')" onmouseleave="hideStuff('KaraP')" id="KaraP">
+							<h3>Kara</h3>
+							<div class="row team2" ondrop="drop(event)" ondragover="allowDrop(event)" id="Kara">
+								{% for kTick in kTicks %}
+									<button type='button' draggable='true' class='btn btn-dark' data-toggle='modal' data-target='#modal ticket.id' ondragstart='drag(event)' id='ticket.id'>
+										<h4>{{ kTick.taskTitle }}</h4>					
+									</button>
+								{% endfor %}
+							</div>
+						</div>
+						<br/>
+						<div ondragover="showStuff('GraceP')" onmouseenter="showStuff('GraceP')" onmouseleave="hideStuff('GraceP')" id="GraceP">
+							<h3>Grace</h3>
+							<div class="row team1" ondrop="drop(event)" ondragover="allowDrop(event)" id="Grace">
+								{% for gTick in gTicks %}
+									<button type='button' draggable='true' class='btn btn-dark' data-toggle='modal' data-target='#modal ticket.id' ondragstart='drag(event)' id='ticket.id'>
+										<h4>{{ gTick.taskTitle }}</h4>					
+									</button>
+								{% endfor %}								
+							</div>
+						</div>
+						<br/>
+						<div ondragover="showStuff('EvelynP')" onmouseenter="showStuff('EvelynP')" onmouseleave="hideStuff('EvelynP')" id="EvelynP">
+							<h3>Evelyn</h3>
+							<div class="row team1" ondrop="drop(event)" ondragover="allowDrop(event)" id="Evelyn">
+								{% for eTick in eTicks %}
+									<button type='button' draggable='true' class='btn btn-dark' data-toggle='modal' data-target='#modal ticket.id' ondragstart='drag(event)' id='ticket.id'>
+										<h4>{{ eTick.taskTitle }}</h4>					
+									</button>
+								{% endfor %}								
+							</div>
+						</div>
+						<br/>
+						<div ondragover="showStuff('TessaP')" onmouseenter="showStuff('TessaP')" onmouseleave="hideStuff('TessaP')" id="TessaP">
+							<h3>Tessa</h3>
+							<div class="row team1" ondrop="drop(event)" ondragover="allowDrop(event)" id="Tessa">
+								{% for tTick in tTicks %}
+									<button type='button' draggable='true' class='btn btn-dark' data-toggle='modal' data-target='#modal ticket.id' ondragstart='drag(event)' id='ticket.id'>
+										<h4>{{ tTick.taskTitle }}</h4>					
+									</button>
+								{% endfor %}						
+							</div>
+						</div>
+						<br/>
+						<div ondragover="showStuff('MikaelaP')" onmouseenter="showStuff('MikaelaP')" onmouseleave="hideStuff('MikaelaP')" id="MikaelaP">
+							<h3>Mikaela</h3>
+							<div class="row team1" ondrop="drop(event)" ondragover="allowDrop(event)" id="Mikaela">
+								{% for mTick in mTicks %}
+									<button type='button' draggable='true' class='btn btn-dark' data-toggle='modal' data-target='#modal ticket.id' ondragstart='drag(event)' id='ticket.id'>
+										<h4>{{ mTick.taskTitle }}</h4>					
+									</button>
+								{% endfor %}						
+							</div>
+						</div>
+						<br/>								
+					</div>
+				</div>	
+				<div class="col-2" id="blocked" ondrop="drop(event)" ondragover="allowDrop(event)">
+					{% for blockTick in blockTicks %}
+					<button type='button' draggable='true' class='btn btn-primary-outline' data-toggle='modal' data-target='#modal ticket.id' ondragstart='drag(event)' id='ticket.id'>
+						<h3>{{ blockTick.taskTitle }}</h3>					
+					</button>
+	
+					{% endfor %}
+				
+				</div>
+				<div class="col-2" id="done" ondrop="drop(event)" ondragover="allowDrop(event)">
+					{% for doneTick in doneTicks %}
+					<button type='button' draggable='true' class='btn btn-primary-outline' data-toggle='modal' data-target='#modal ticket.id' ondragstart='drag(event)' id='ticket.id'>
+						<h3>{{ doneTick.taskTitle }}</h3>					
+					</button>
+	
+					{% endfor %}
+				</div>
+			</div>	
+        </div>
+
+    </body>
+</html>
